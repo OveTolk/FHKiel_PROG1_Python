@@ -1,0 +1,12 @@
+server {
+    listen          91;
+    server_name     handball.ovetolk.eu;
+    charset         utf-8;
+    root            /var/www/projectsummary/dist;
+    index           index.html;
+    location / {
+       root /var/www/projectsummary/dist; 
+       try_files $uri $uri/ /index.html;
+	}
+}
+

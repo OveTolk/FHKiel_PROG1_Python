@@ -35,6 +35,62 @@ entry6.grid(row=6, column=1)
 entry7.grid(row=7, column=1)
 entry8.grid(row=8, column=1)
 
+timeline_entries = []
+
+def add_timeline_entry():
+    date = date_entry.get()
+    event = event_entry.get()
+    description = description_entry.get()
+    color = color_entry.get()
+    
+    if date and event and description and color:
+        entry = {
+            "date": date,
+            "event": event,
+            "description": description,
+            "color": color
+        }
+        timeline_entries.append(entry)
+        clear_timeline_fields()
+        update_timeline_display()
+
+def clear_timeline_fields():
+    date_entry.delete(0, "end")
+    event_entry.delete(0, "end")
+    description_entry.delete(0, "end")
+    color_entry.delete(0, "end")
+
+def update_timeline_display():
+    timeline_display.config(state="normal")
+    timeline_display.delete("1.0", "end")
+    for entry in timeline_entries:
+        timeline_display.insert("end", json.dumps(entry, indent=4) + "\n")
+    timeline_display.config(state="disabled")
+
+# Labels und Entry-Felder für Timeline-Einträge
+tk.Label(text="Date:").grid(row=9, column=0)
+tk.Label(text="Event:").grid(row=10, column=0)
+tk.Label(text="Description:").grid(row=11, column=0)
+tk.Label(text="Color:").grid(row=12, column=0)
+
+date_entry = tk.Entry()
+event_entry = tk.Entry()
+description_entry = tk.Entry()
+color_entry = tk.Entry()
+
+date_entry.grid(row=9, column=1)
+event_entry.grid(row=10, column=1)
+description_entry.grid(row=11, column=1)
+color_entry.grid(row=12, column=1)
+
+# Button zum Hinzufügen von Timeline-Einträgen
+add_timeline_button = tk.Button(text="Add Timeline Entry", command=add_timeline_entry)
+add_timeline_button.grid(row=13, column=0)
+
+# Ein Textfeld zur Anzeige der Timeline-Einträge
+timeline_display = tk.Text(height=5, width=40, state="disabled")
+timeline_display.grid(row=14, column=1)
+
 def load():
     all_entries = {
         "Initiative name": entry0.get(),
@@ -46,11 +102,13 @@ def load():
         "Required investments": entry6.get(),
         "Risks": entry7.get(),
         "Dependencies": entry8.get(),
+        "Datapoints": timeline_entries
     }
     converted = json.dumps(all_entries, indent=4)
-    print(converted)
-    requests.get("http://localhost:3007/creategraph", data=converted)
+    # print(converted)
+    headers = {'Content-type': 'application/json'}
+    requests.get("http://ts.ovetolk.eu:3007/creategraph", data=converted, headers=headers)
 
-tk.Button(text="Create graph", command=load).grid(row=9)
+tk.Button(text="Create graph", command=load).grid(row=15)
 
 tk.mainloop()

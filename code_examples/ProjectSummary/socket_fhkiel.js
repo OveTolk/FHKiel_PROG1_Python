@@ -26,8 +26,7 @@ wss.on('connection', (ws) => {
 // Deine HTTP-Route für creategraph
 app.get('/creategraph', async (req, res) => {    
   // Daten aus dem HTTP-Request empfangen
-  const data = req.body[0];
-  console.log(data)
+  const data = req.body;
   // Überprüfe, ob eine WebSocket-Verbindung besteht
   if (connectedWebSocket) {
     try {
