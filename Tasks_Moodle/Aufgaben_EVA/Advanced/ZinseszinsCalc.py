@@ -22,5 +22,8 @@ while jahr < laufzeit + 1:
 x_values = np.array(x)
 y_values = np.array(y)
 
+plt.xlabel("Laufzeit (in Jahren)")
+plt.ylabel("Kapital (in €)")
+
 plt.plot(x_values, y_values)
 plt.show()
