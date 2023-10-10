@@ -24,5 +24,8 @@ elif ((bmi > normalweight) and (bmi < preadipositas)):
     user_score = "Pre-adipositas"
 elif ((bmi > preadipositas) and (bmi < moderateadipositas)):
     user_score = "Moderate adipositas"  
-
+elif ((bmi > moderateadipositas) and (bmi < strongadipositas)):
+    user_score = "Strong adipositas"
+elif ((bmi > strongadipositas)):
+    user_score = "Extreme adipositas"
 print(f"Your height is {height} m. Your weight is {weight} kg. Your calculated BMI is {round(bmi, 2)} - {user_score}.")
