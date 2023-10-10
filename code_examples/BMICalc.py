@@ -25,4 +25,4 @@ elif ((bmi > normalweight) and (bmi < preadipositas)):
 elif ((bmi > preadipositas) and (bmi < moderateadipositas)):
     user_score = "Moderate adipositas"  
 
-print(round(bmi, 2), user_score)
+print(f"Your height is {height} m. Your weight is {weight} kg. Your calculated BMI is {round(bmi, 2)} - {user_score}.")
