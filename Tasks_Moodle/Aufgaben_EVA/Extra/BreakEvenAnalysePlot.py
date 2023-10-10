@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 # User Input für Variablen
 fix = float(input("Bitte geben Sie die Fixkosten ein: "))
