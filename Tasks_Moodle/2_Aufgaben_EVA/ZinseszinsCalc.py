@@ -7,9 +7,7 @@ zinssatz = float(input("Geben Sie den Zinssatz (%) ein: "))
 laufzeit = int(input("Geben Sie die Laufzeit (in Jahren): "))
 
 # Berechnungen der Werte
-nebenrechnung1 = zinssatz / 100 + 1
-nebenrechnung2 = nebenrechnung1 ** laufzeit
-endkapital = anfangskapital * nebenrechnung2
+endkapital = anfangskapital * (((zinssatz / 100) + 1) ** laufzeit)
 zinseszins = endkapital - anfangskapital
 
 # Ausgabe der Werte
