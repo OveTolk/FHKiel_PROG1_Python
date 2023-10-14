@@ -56,7 +56,7 @@ ausgabe_text = tk.Text(app, height=10, width=40)
 ausgabe_text.config(state="disabled")
 ausgabe_text.pack(padx=10, pady=5)
 
-auswahl_haltestelle = ttk.Combobox(app, textvariable=selected_haltestelle, values=data['haltestelle'].unique())
+auswahl_haltestelle = ttk.Combobox(app, textvariable=eingabe_haltestelle, values=data['haltestelle'].unique())
 auswahl_haltestelle.pack(padx=10, pady=5)
 
 ausgewaehlter_tag_var = tk.StringVar()
