@@ -11,4 +11,5 @@ x = stats["Jahr"]
 y = stats["Fahrgaeste"].astype(int)
 
 plt.plot(x, y)
+plt.ticklabel_format(style='plain')
 plt.show()
