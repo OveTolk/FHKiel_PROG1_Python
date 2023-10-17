@@ -1,5 +1,7 @@
 # Berechnung der Schulnoten anhand externe Einflüsse.
 
+import math
+
 # Prüfen ob Eingabe richtig
 eingabe = True
 while eingabe:
@@ -57,6 +59,8 @@ while eingabe:
 
     eingabe = False
 
+# Berechnung der Note anhand der Auswahl
+
 if (auge == 1) and (frisur == 1): 
     note = note * 1.1
 if (auge == 1) and (frisur == 0): 
@@ -67,4 +71,6 @@ if (auge == 0) and (frisur == 0):
     note = note * 0.9
 if wetter == 1:
     note = note - 1
-print(note)
+
+# Ausgabe der Note
+print(round(note, 2))
