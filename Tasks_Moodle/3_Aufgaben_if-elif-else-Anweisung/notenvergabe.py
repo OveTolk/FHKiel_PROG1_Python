@@ -73,4 +73,4 @@ if wetter == 1:
     note = note - 1
 
 # Ausgabe der Note
-print(round(note, 2))
+print(f"Die Note der Schüler:in beläuft sich durch die gegebenen Bedingungen auf {round(note, 2)}.")
