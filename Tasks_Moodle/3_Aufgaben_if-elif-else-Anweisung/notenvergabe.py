@@ -1,7 +1,5 @@
 # Berechnung der Schulnoten anhand externe Einflüsse.
 
-import math
-
 # Prüfen ob Eingabe richtig
 eingabe = True
 while eingabe:
