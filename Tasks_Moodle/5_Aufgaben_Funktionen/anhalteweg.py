@@ -29,6 +29,7 @@ def output(kmh, rweg, bweg, aweg):#
 
 # Haupt Programm
 def main():
+    print("Dieses Programm berechnet den Reaktionsweg, Bremsweg und Anhalteweg anhand einer eingegeben Geschwindigkeit.")
     kmh = inputUser()
     rweg = reaktionsweg(kmh)
     bweg = bremsweg(kmh)

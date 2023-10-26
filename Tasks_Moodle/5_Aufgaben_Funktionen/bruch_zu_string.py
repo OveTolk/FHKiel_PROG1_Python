@@ -11,6 +11,7 @@ def inputUser():
 
 # Haupt Funktion
 def main():
+    print("Dieses Programm erstellt mit den Eingaben des Users einen Bruch und gibt diesen aus.")
     vars = inputUser()
     bruch_zu_string(vars)
 
